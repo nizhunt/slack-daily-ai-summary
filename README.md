@@ -26,7 +26,7 @@ Slack AI costs **$10/user/month**. This open-source alternative gives you the sa
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/slack-daily-summary.git
+git clone https://github.com/nizhunt/slack-daily-summary.git
 cd slack-daily-summary
 
 # Install dependencies
@@ -269,4 +269,4 @@ Slack AI costs $10/user/month as a mandatory add-on. For a 20-person team, that'
 2. **Data ownership**: Summaries in my Obsidian vault, not trapped in Slack
 3. **Customization**: My own prompt engineering for decision-grade briefs
 
-Read more about the motivation on [LinkedIn](#).
+
