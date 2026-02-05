@@ -1,0 +1,26 @@
+{
+  "name": "slack-daily-summary",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Daily Slack export to clean Markdown for LLM consumption",
+  "main": "export-slack-day.mjs",
+  "scripts": {
+    "start": "node export-slack-day.mjs",
+    "export": "node export-slack-day.mjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "@slack/web-api": "^7.13.0",
+    "date-fns": "^4.1.0",
+    "date-fns-tz": "^3.2.0",
+    "dotenv": "^17.2.3",
+    "yargs": "^18.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

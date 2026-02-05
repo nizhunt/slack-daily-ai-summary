@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- 
+    macOS LaunchAgent for scheduling weekly Slack exports.
+    
+    Setup Instructions:
+    1. Copy this file to ~/Library/LaunchAgents/com.yourname.slack-weekly.plist
+    2. Replace all placeholder paths with your actual paths
+    3. Load with: launchctl load ~/Library/LaunchAgents/com.yourname.slack-weekly.plist
+    4. Unload with: launchctl unload ~/Library/LaunchAgents/com.yourname.slack-weekly.plist
+    -->
+
+    <key>Label</key>
+    <string>com.yourname.slack-weekly</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <!-- Path to your node binary. Find with: which node -->
+        <string>/usr/local/bin/node</string>
+        <!-- Path to the weekly-workflow.mjs script -->
+        <string>/path/to/slack-daily-summary/weekly-workflow.mjs</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/path/to/slack-daily-summary</string>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+        <!-- Environment variables are loaded from .env file by the script -->
+    </dict>
+
+    <!-- Run every Friday at 8:00 PM -->
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Weekday</key>
+        <integer>5</integer>
+        <key>Hour</key>
+        <integer>20</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+
+    <key>StandardOutPath</key>
+    <string>/path/to/slack-daily-summary/weekly.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/path/to/slack-daily-summary/weekly.err</string>
+</dict>
+</plist>
